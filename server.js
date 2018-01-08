@@ -3,6 +3,9 @@ const hbs = require("hbs");
 const fs = require("fs");
 
 
+var port = process.env.PORT || 3000;
+
+
 hbs.registerPartials(__dirname + "/views/partials")
 hbs.registerHelper("getCurrentYear", () => {
     return new Date().getFullYear()
@@ -56,6 +59,6 @@ app.get("/about", (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("Starting connecting to server...")
+app.listen(port, () => {
+    console.log(`Starting connecting to server with port ${port}...`)
 });
