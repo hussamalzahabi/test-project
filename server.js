@@ -48,15 +48,26 @@ app.get("/", (req, res) => {
 
     res.render("home",
         {
-            welcomeMsg: "Welcome to my website"
+            welcomeMsg: "Welcome to my website",
+            title:"home page"
         })
 });
 
 app.get("/about", (req, res) => {
     res.render("about", {
-        welcomeMsg: "Welcome to my about web page"
+        welcomeMsg: "Welcome to my about web page",
+        title:"about"
     })
 })
+
+
+app.get("/portfolio", (req, res) => {
+    res.render("about", {
+        welcomeMsg: "Welcome to my portfolio web page",
+        title: "portfolio"
+    })
+})
+
 
 
 app.listen(port, () => {
